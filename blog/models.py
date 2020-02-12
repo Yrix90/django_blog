@@ -28,8 +28,8 @@ class Actor(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = _("Актеры и режиссеры")
-        verbose_name_plural = _("Актеры и режиссеры")
+        verbose_name =  "Актеры и режиссеры"
+        verbose_name_plural =  "Актеры и режиссеры"
 
 class Genre(models.Model):
     """Жанры"""
@@ -41,8 +41,8 @@ class Genre(models.Model):
             return self.name
 
     class Meta:
-        verbose_name = _("Жанр")
-        verbose_name_plural = _("Жанры")
+        verbose_name =  "Жанр"
+        verbose_name_plural =  "Жанры"
     
 
 class Movie(models.Model):
@@ -68,8 +68,8 @@ class Movie(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = _("Фильм")
-        verbose_name_plural = _("Фильмы")
+        verbose_name =  "Фильм"
+        verbose_name_plural =  "Фильмы"
 
 
 class MovieShots(models.Model):
@@ -83,8 +83,8 @@ class MovieShots(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = _('Кадр из фильма')
-        verbose_name_plural = _('Кадры из фильма')
+        verbose_name =  'Кадр из фильма'
+        verbose_name_plural =  'Кадры из фильма'
     
 
 class RatingStar(models.Model):
@@ -95,8 +95,8 @@ class RatingStar(models.Model):
         return self.value
 
     class Meta:
-        verbose_name = _('Звезда рейтинга')
-        verbose_name_plural = _('Звезды рейтинга')
+        verbose_name =  'Звезда рейтинга'
+        verbose_name_plural =  'Звезды рейтинга'
 
 
 class Rating(models.Model):
@@ -109,8 +109,8 @@ class Rating(models.Model):
         return f'{self.star} - {self.movie}'
 
     class Meta:
-        verbose_name = _('Рейтинг')
-        verbose_name_plural = _('Рейтинги')
+        verbose_name =  'Рейтинг'
+        verbose_name_plural =  'Рейтинги'
 
 
 class Reviews(models.Model):
@@ -121,9 +121,9 @@ class Reviews(models.Model):
     parent = models.ForeignKey('self', verbose_name='Родитель', on_delete=models.SET_NULL, blank=True, null=True)
     movie = models.ForeignKey(Movie, verbose_name='фильм', on_delete=models.CASCADE)
 
-    def __str__(self):
+    def __str_(self):
         return f'{self.name} - {self.movie}'
     
     class Meta:
-        verbose_name = _('Отзыв')
-        verbose_name_plural = _('Отзывы')
+        verbose_name =  'Отзыв'
+        verbose_name_plural =  'Отзывы'
