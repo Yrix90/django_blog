@@ -9,4 +9,4 @@ class MoviesView(View):
     """Список фильмов"""
     def get(self, request):
         movies = Movie.object.all()
-        return render(rquest, 'movies/movie_list.html', {'movies_list': movies})
+        return render(request, 'movies/movie_list.html', {'movies_list': movies})
